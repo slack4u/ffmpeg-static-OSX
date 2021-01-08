@@ -301,7 +301,7 @@ tput bold ; echo ; echo '📍 ' "$LastVersion" ; tput sgr0 ; sleep 2
 cd ${CMPL}
 wget --no-check-certificate https://ftp.osuosl.org/pub/xiph/releases/ogg/"$LastVersion"
 tar -zxvf libogg-*
-cd libogg-*
+cd libogg-*/
 wget --no-check-certificate https://github.com/xiph/ogg/commit/c8fca6b4a02d695b1ceea39b330d4406001c03ed.patch?full_index=1
 patch /Volumes/Ramdisk/compile/libogg-1.3.4/include/ogg/os_types.h  <  /Volumes/Ramdisk/compile/libogg-1.3.4/c8fca6b4a02d695b1ceea39b330d4406001c03ed.patch\?full_index\=1
 ./configure --prefix=${TARGET} --disable-shared --enable-static --disable-dependency-tracking
@@ -516,7 +516,7 @@ tput bold ; echo ; echo '📍 ' SDL2 2.0.12 ; tput sgr0 ; sleep 2
 cd ${CMPL}
 wget http://www.libsdl.org/release/SDL2-2.0.12.tar.gz
 tar xvf SDL2-*.tar.gz
-cd SDL2*
+cd SDL2*/
 ./configure --prefix=${TARGET} --enable-static --disable-shared
 make -j "$THREADS" && make install
 rm -fr /Volumes/RamDisk/compile/*
